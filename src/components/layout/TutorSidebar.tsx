@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { LayoutDashboard, PawPrint, CalendarPlus, Bell, Receipt, LogOut } from "lucide-react";
+import logoVetcare from "@/assets/logo-vetcare.png";
 
 const links = [
   { to: "/tutor", icon: LayoutDashboard, label: "Dashboard" },
@@ -16,9 +17,8 @@ const TutorSidebar = () => {
   return (
     <aside className="w-64 bg-card border-r border-border min-h-screen flex flex-col">
       <div className="p-6 border-b border-border">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-2xl">🐾</span>
-          <span className="font-display font-bold text-xl text-foreground">VetCare</span>
+        <Link to="/">
+          <img src={logoVetcare} alt="VetCare" className="h-10 w-auto" />
         </Link>
       </div>
 
