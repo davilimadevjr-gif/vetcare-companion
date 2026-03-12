@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { PawPrint, Plus, Syringe, FileText, Calendar } from "lucide-react";
+import { PawPrint, Plus, Syringe, FileText, Calendar, Dog, Cat } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +20,19 @@ const serviceLabels: Record<string, string> = {
 const TutorPets = () => {
   const [selectedPet, setSelectedPet] = useState<Pet | null>(null);
 
+  const getSpeciesIcon = (species: string) => {
+    if (species === "dog") return <Dog className="w-10 h-10 text-primary" />;
+    if (species === "cat") return <Cat className="w-10 h-10 text-primary" />;
+    return <PawPrint className="w-10 h-10 text-primary" />;
+  };
+
+  const getSpeciesLabel = (species: string) => {
+    if (species === "dog") return "Cachorro";
+    if (species === "cat") return "Gato";
+    if (species === "bird") return "Pássaro";
+    return "Outro";
+  };
+
   return (
     <div className="max-w-5xl">
       <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
@@ -38,7 +51,7 @@ const TutorPets = () => {
               <DialogHeader>
                 <DialogTitle className="font-display">Cadastrar novo pet</DialogTitle>
               </DialogHeader>
-              <form className="space-y-4 mt-4" onSubmit={(e) => { e.preventDefault(); console.log("Add pet"); }}>
+              <form className="space-y-4 mt-4" onSubmit={(e) => { e.preventDefault(); }}>
                 <div className="space-y-2">
                   <Label>Nome</Label>
                   <Input placeholder="Nome do pet" />
@@ -88,7 +101,6 @@ const TutorPets = () => {
         </div>
       </motion.div>
 
-      {/* Pet grid */}
       <div className="grid md:grid-cols-3 gap-6 mb-8">
         {mockPets.map((pet, i) => (
           <motion.div key={pet.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}>
@@ -98,14 +110,12 @@ const TutorPets = () => {
             >
               <div className="flex flex-col items-center text-center">
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <PawPrint className="w-10 h-10 text-primary" />
+                  {getSpeciesIcon(pet.species)}
                 </div>
                 <h3 className="font-display font-semibold text-foreground text-lg">{pet.name}</h3>
                 <p className="text-muted-foreground text-sm">{pet.breed}</p>
                 <div className="flex items-center gap-2 mt-2">
-                  <Badge variant="secondary" className="text-xs">
-                    {pet.species === "dog" ? "🐕 Cachorro" : pet.species === "cat" ? "🐈 Gato" : "🐾 Outro"}
-                  </Badge>
+                  <Badge variant="secondary" className="text-xs">{getSpeciesLabel(pet.species)}</Badge>
                   <Badge variant="secondary" className="text-xs">{pet.weight}kg</Badge>
                 </div>
               </div>
@@ -114,7 +124,6 @@ const TutorPets = () => {
         ))}
       </div>
 
-      {/* Pet details */}
       {selectedPet && (
         <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
           <Card className="p-6">
