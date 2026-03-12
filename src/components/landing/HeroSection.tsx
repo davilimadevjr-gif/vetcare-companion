@@ -1,83 +1,102 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Calendar, Heart, Shield, Clock } from "lucide-react";
+import { Calendar, Shield, Clock, Award, ArrowRight } from "lucide-react";
+import heroVet from "@/assets/hero-vet.jpg";
 
-const features = [
-  { icon: Calendar, text: "Agendamento online 24h" },
-  { icon: Heart, text: "Equipe apaixonada por pets" },
-  { icon: Shield, text: "Prontuário digital seguro" },
-  { icon: Clock, text: "Atendimento de emergência" },
+const stats = [
+  { value: "15.000+", label: "Pets atendidos" },
+  { value: "98%", label: "Satisfação" },
+  { value: "12+", label: "Anos de experiência" },
+  { value: "24h", label: "Emergência" },
 ];
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-background">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative overflow-hidden bg-background">
+      <div className="container mx-auto px-4 py-16 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6">
-              🐾 Cuidado veterinário de excelência
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-display leading-tight mb-6 text-foreground">
-              O melhor cuidado para quem mais{" "}
-              <span className="text-primary">importa</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 mb-6">
+              <Award className="w-4 h-4 text-primary" />
+              <span className="text-primary text-sm font-semibold">Clínica referência em São Paulo</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold font-display leading-[1.1] mb-6 text-foreground">
+              Cuidado veterinário de{" "}
+              <span className="text-primary">excelência</span> para quem mais importa
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              Agende consultas, acompanhe vacinas e tenha o histórico completo
-              do seu pet na palma da mão. Tudo digital, simples e seguro.
+            <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
+              Agende consultas online, acompanhe o prontuário digital e receba lembretes
+              automáticos de vacinas. Uma experiência moderna e completa para tutores e pets.
             </p>
             <div className="flex flex-wrap gap-4 mb-12">
               <Link to="/register">
-                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-8 shadow-lg shadow-accent/25">
+                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-8 shadow-lg shadow-accent/20 gap-2">
                   Agendar Consulta
+                  <ArrowRight className="w-4 h-4" />
                 </Button>
               </Link>
-              <Link to="/login">
+              <a href="#services">
                 <Button size="lg" variant="outline" className="font-semibold text-base px-8">
-                  Já sou cliente
+                  Conhecer Serviços
                 </Button>
-              </Link>
+              </a>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {features.map((f, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 + i * 0.1 }}
-                  className="flex items-center gap-3"
-                >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                    <f.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <span className="text-sm font-medium text-foreground">{f.text}</span>
-                </motion.div>
-              ))}
+            <div className="flex items-center gap-6 flex-wrap">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Calendar className="w-4 h-4 text-primary" />
+                <span>Agendamento 24h</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Shield className="w-4 h-4 text-primary" />
+                <span>Prontuário seguro</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                <Clock className="w-4 h-4 text-primary" />
+                <span>Atendimento emergencial</span>
+              </div>
             </div>
           </motion.div>
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="hidden lg:flex justify-center"
+            className="hidden lg:block"
           >
-            <div className="relative w-full max-w-lg aspect-square rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-              <div className="absolute inset-4 rounded-2xl bg-card shadow-xl flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-8xl mb-4">🐕</div>
-                  <p className="text-2xl font-display font-bold text-foreground">VetCare</p>
-                  <p className="text-muted-foreground">Saúde e bem-estar animal</p>
-                </div>
-              </div>
+            <div className="relative">
+              <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-2xl" />
+              <img
+                src={heroVet}
+                alt="Veterinária examinando um golden retriever em clínica moderna"
+                className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
+              />
             </div>
           </motion.div>
         </div>
+
+        {/* Stats bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 lg:mt-24"
+        >
+          <div className="bg-card rounded-2xl border border-border shadow-sm p-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              {stats.map((stat, i) => (
+                <div key={i} className="text-center">
+                  <p className="text-3xl md:text-4xl font-display font-bold text-primary">{stat.value}</p>
+                  <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
