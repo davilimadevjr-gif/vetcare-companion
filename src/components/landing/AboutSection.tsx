@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import clinicInterior from "@/assets/clinic-interior.jpg";
+import dogPeeking from "@/assets/dog-peeking.jpg";
 import { CheckCircle } from "lucide-react";
 
 const highlights = [
