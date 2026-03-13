@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Calendar, Shield, Clock, Award, ArrowRight } from "lucide-react";
-import heroVet from "@/assets/hero-vet.jpg";
+import vetUltrasound from "@/assets/vet-ultrasound.jpg";
 
 const stats = [
   { value: "15.000+", label: "Pets atendidos" },
