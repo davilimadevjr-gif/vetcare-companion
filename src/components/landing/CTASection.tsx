@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Smartphone, Calendar, Bell } from "lucide-react";
+import dogCurious from "@/assets/dog-curious.jpg";
 
 const features = [
   {
@@ -39,12 +40,22 @@ const CTASection = () => {
               Cadastre-se gratuitamente e tenha acesso ao portal do tutor. Agende consultas,
               acompanhe vacinas e tenha o histórico completo na palma da mão.
             </p>
-            <Link to="/register">
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-8 gap-2 shadow-lg">
-                Criar minha conta gratuita
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
+            <div className="flex flex-wrap gap-4 mb-8">
+              <Link to="/register">
+                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold text-base px-8 gap-2 shadow-lg">
+                  Criar minha conta gratuita
+                  <ArrowRight className="w-4 h-4" />
+                </Button>
+              </Link>
+            </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src={dogCurious}
+                alt="Cachorro curioso olhando para a câmera"
+                className="w-full h-56 object-cover object-top"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 to-transparent" />
+            </div>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
