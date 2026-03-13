@@ -26,8 +26,30 @@ const HeroSection = () => {
               <span className="text-primary text-sm font-semibold">Clínica referência em São Paulo</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold font-display leading-[1.1] mb-6 text-foreground">
-              Cuidado veterinário de{" "}
-              <span className="text-primary">excelência</span> para quem mais importa
+              <motion.span
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="block"
+              >
+                Cuidado veterinário de
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.5, type: "spring", stiffness: 120 }}
+                className="text-primary inline-block"
+              >
+                excelência
+              </motion.span>
+              <motion.span
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                className="block"
+              >
+                para quem mais importa
+              </motion.span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
               Agende consultas online, acompanhe o prontuário digital e receba lembretes
