@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
 import { Eye, EyeOff } from "lucide-react";
 import logoVetcare from "@/assets/logo-vetcare.png";
-import heroVet from "@/assets/hero-vet.jpg";
+import catHappy from "@/assets/cat-happy.jpg";
 
 const Register = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", password: "", confirmPassword: "" });
@@ -24,7 +24,7 @@ const Register = () => {
   return (
     <div className="min-h-screen flex bg-background">
       <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center overflow-hidden">
-        <img src={heroVet} alt="Veterinária atendendo pet" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={catHappy} alt="Gato feliz e saudável" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/80" />
         <div className="relative text-center p-12">
           <img src={logoVetcare} alt="VetCare" className="h-16 w-auto mx-auto mb-6 brightness-0 invert" />

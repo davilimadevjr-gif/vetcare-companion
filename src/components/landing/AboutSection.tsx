@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import clinicInterior from "@/assets/clinic-interior.jpg";
+import dogPeeking from "@/assets/dog-peeking.jpg";
 import { CheckCircle } from "lucide-react";
 
 const highlights = [
@@ -24,8 +24,8 @@ const AboutSection = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/10 to-transparent rounded-3xl blur-xl" />
               <img
-                src={clinicInterior}
-                alt="Interior moderno da clínica VetCare com recepção"
+                src={dogPeeking}
+                 alt="Cachorro simpático espiando pela lateral"
                 className="relative rounded-2xl shadow-lg w-full object-cover aspect-[4/3]"
               />
             </div>

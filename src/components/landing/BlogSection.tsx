@@ -1,23 +1,28 @@
 import { motion } from "framer-motion";
-import { Calendar, BookOpen, Shield } from "lucide-react";
+import dogBall from "@/assets/dog-ball.jpg";
+import catHappy from "@/assets/cat-happy.jpg";
+import dogDuckToy from "@/assets/dog-duck-toy.jpg";
 
 const posts = [
   {
-    icon: Calendar,
+    image: dogBall,
+    imageAlt: "Cachorro brincando com bola",
     category: "Prevenção",
     title: "Calendário de vacinação: tudo o que você precisa saber",
     excerpt: "Entenda quais vacinas são essenciais para cães e gatos em cada fase da vida e por que manter o calendário em dia é fundamental.",
     readTime: "5 min de leitura",
   },
   {
-    icon: BookOpen,
+    image: catHappy,
+    imageAlt: "Gato feliz e saudável",
     category: "Nutrição",
     title: "Alimentação natural para pets: mitos e verdades",
     excerpt: "Descubra se a alimentação natural é realmente a melhor opção para o seu pet e como fazer a transição de forma segura.",
     readTime: "7 min de leitura",
   },
   {
-    icon: Shield,
+    image: dogDuckToy,
+    imageAlt: "Cachorro brincando com brinquedo",
     category: "Cuidados",
     title: "5 sinais de que seu pet precisa ir ao veterinário urgentemente",
     excerpt: "Alguns sintomas podem indicar problemas graves. Aprenda a identificar os sinais de alerta que exigem atendimento imediato.",
@@ -53,8 +58,12 @@ const BlogSection = () => {
               transition={{ delay: i * 0.1 }}
               className="bg-card rounded-xl border border-border overflow-hidden hover:shadow-lg transition-shadow group cursor-pointer"
             >
-              <div className="h-48 bg-gradient-to-br from-primary/10 to-primary/5 flex items-center justify-center">
-                <post.icon className="w-16 h-16 text-primary/30 group-hover:text-primary/50 transition-colors" />
+              <div className="h-48 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.imageAlt}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
               <div className="p-6">
                 <div className="flex items-center gap-2 mb-3">
