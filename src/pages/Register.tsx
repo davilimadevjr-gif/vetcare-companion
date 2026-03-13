@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { motion } from "framer-motion";
 import { Eye, EyeOff } from "lucide-react";
 import logoVetcare from "@/assets/logo-vetcare.png";
-import heroVet from "@/assets/hero-vet.jpg";
+import catHappy from "@/assets/cat-happy.jpg";
 
 const Register = () => {
   const [form, setForm] = useState({ name: "", email: "", phone: "", password: "", confirmPassword: "" });
