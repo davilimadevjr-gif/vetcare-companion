@@ -70,9 +70,9 @@ const HeroSection = () => {
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-3xl blur-2xl" />
-              <img
-                src={heroVet}
-                alt="Veterinária examinando um golden retriever em clínica moderna"
+                <img
+                  src={vetUltrasound}
+                  alt="Veterinário realizando ultrassom em pet na clínica"
                 className="relative rounded-2xl shadow-2xl w-full object-cover aspect-[4/3]"
               />
             </div>

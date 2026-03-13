@@ -22,7 +22,7 @@ const Login = () => {
     <div className="min-h-screen flex bg-background">
       {/* Left - branding */}
       <div className="hidden lg:flex lg:w-1/2 relative items-center justify-center overflow-hidden">
-        <img src={heroVet} alt="Veterinária atendendo pet" className="absolute inset-0 w-full h-full object-cover" />
+        <img src={puppyRunning} alt="Filhote correndo feliz" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-primary/80" />
         <div className="relative text-center p-12">
           <img src={logoVetcare} alt="VetCare" className="h-16 w-auto mx-auto mb-6 brightness-0 invert" />
