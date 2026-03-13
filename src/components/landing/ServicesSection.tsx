@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import serviceConsultation from "@/assets/service-consultation.jpg";
 import serviceVaccination from "@/assets/service-vaccination.jpg";
 import serviceSurgery from "@/assets/service-surgery.jpg";
-import serviceGrooming from "@/assets/service-grooming.jpg";
+import serviceGrooming from "@/assets/service-grooming.png";
 
 const services = [
   {
